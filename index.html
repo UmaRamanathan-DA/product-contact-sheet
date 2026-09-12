@@ -256,23 +256,20 @@
     white-space: nowrap;
   }
 
-  /* Masonry via CSS columns -- no forced aspect ratio, nothing gets cropped */
+  /* Row-wise grid -- frames flow left to right, top to bottom in number order.
+     No forced aspect ratio (align-items: start), so nothing gets cropped;
+     shorter frames just leave quiet space beneath them in their row. */
   .frames {
-    columns: 4 220px;
-    column-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    align-items: start;
   }
 
   /* Fixed 2x2 grid for rolls where frames read better large (e.g. wide dashboard charts) */
   .frames.grid-2 {
-    columns: unset;
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 22px;
-  }
-
-  .frames.grid-2 .frame {
-    break-inside: unset;
-    margin: 0;
   }
 
   @media (max-width: 480px) {
@@ -281,8 +278,7 @@
 
   .frame {
     position: relative;
-    margin: 0 0 22px;
-    break-inside: avoid;
+    margin: 0;
     background: var(--surface);
     border: 1px solid var(--frame-edge);
     border-radius: 4px;
@@ -374,7 +370,7 @@
   }
 
   @media (max-width: 900px) {
-    .frames { columns: 3 180px; }
+    .frames { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
   }
 
   @media (max-width: 640px) {
@@ -386,7 +382,8 @@
     }
     .roll-index { padding-top: 0; }
     .roll-tag { text-align: left; padding-top: 4px; }
-    .frames { columns: 2 140px; }
+    .frames { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    .frames.grid-2 { grid-template-columns: 1fr; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -402,7 +399,7 @@
   <header class="masthead">
     <div class="byline">
       <span class="byline-name">Uma Ramanathan</span>
-      <span class="byline-studio">WhatMattersMost Studio</span>
+      <span class="byline-studio">Canvas &amp; Coefficients Studio</span>
       <span class="byline-title">Product Ideation &middot; Design &middot; Analytics &middot; AI</span>
     </div>
     <div class="eyebrow">Quick-glance gallery</div>
@@ -693,6 +690,6 @@
   </section>
 </div>
 
-<footer>WHATMATTERSMOST STUDIO &mdash; UMA RAMANATHAN &mdash; CONTACT SHEET V11</footer>
+<footer>CANVAS &amp; COEFFICIENTS STUDIO &mdash; UMA RAMANATHAN &mdash; CONTACT SHEET V12</footer>
 </body>
 </html>
