@@ -107,6 +107,28 @@ rolls = [
             ("ksd-4", "Ksara Decor storefront scroller screen"),
         ],
     },
+    {
+        "num": "06",
+        "title": "Loan Distribution Equity Analysis",
+        "badge": None,
+        "video": "loan-fairness-video",
+        "tag": "DATA VIZ &middot; GEOSPATIAL &middot; TABLEAU",
+        "desc": "Geospatial Tableau analysis surfacing where loan distribution diverges from equitable access, not just where volume is highest.",
+        "frames": [],
+    },
+    {
+        "num": "07",
+        "title": "Taxi Business Insights",
+        "badge": None,
+        "tag": "DATA VIZ &middot; OPERATIONS &middot; TABLEAU &amp; PYTHON",
+        "desc": "Where a Glasgow taxi fleet's demand actually happens, and whether pricing holds up &mdash; turned from raw trip data into visible patterns.",
+        "frames": [
+            ("taxi-1", "Taxi business insights dashboard overview"),
+            ("taxi-2", "Taxi pickups by hour of day chart"),
+            ("taxi-3", "Taxi drop-off postcode by hour chart"),
+            ("taxi-4", "Taxi fare analysis chart"),
+        ],
+    },
 ]
 
 def render_frame(roll_frame_count, idx, name, alt):
@@ -406,33 +428,6 @@ HEAD_CSS = '''
     z-index: 1;
   }
 
-  .roll.next {
-    padding-top: 44px;
-  }
-
-  .next-card {
-    border: 1px dashed var(--frame-border);
-    border-radius: 6px;
-    padding: 28px 24px;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .next-card .roll-index {
-    padding-top: 0;
-  }
-
-  .next-card p {
-    font-size: 14.5px;
-    color: var(--ink-faint);
-    margin: 0;
-    font-style: italic;
-    font-family: var(--font-display);
-  }
-
   .contact {
     display: flex;
     align-items: baseline;
@@ -513,19 +508,12 @@ BODY_HTML = f'''<div class="wrap">
       A contact sheet, not a case-study deck &mdash; <strong>shipped and prototyped app design work</strong>,
       rolled out frame by frame the way I'd walk a founder through it over coffee.
       I also build <span class="highlight">real analytical dashboards and AI automations</span> end-to-end &mdash;
-      those case studies are the next roll in, loading soon.
+      the data-viz rolls below are early proof, with AI automation case studies loading in next.
     </p>
   </header>
 
   <div class="rolls">
 {roll_sections_html}
-
-    <section class="roll next">
-      <div class="next-card">
-        <span class="roll-index">ROLL 06</span>
-        <p>Analytics &amp; AI work &mdash; developing.</p>
-      </div>
-    </section>
   </div>
 
   <section class="contact">
@@ -538,7 +526,7 @@ BODY_HTML = f'''<div class="wrap">
   </section>
 </div>
 
-<footer>UMA R. &mdash; PRODUCT &amp; ANALYTICS &mdash; CONTACT SHEET V5</footer>'''
+<footer>UMA R. &mdash; PRODUCT &amp; ANALYTICS &mdash; CONTACT SHEET V6</footer>'''
 
 # 1. Artifact fragment (no doctype/html/head/body -- the Artifact tool wraps this)
 fragment = f'''<title>Product Contact Sheet</title>
