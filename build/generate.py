@@ -97,7 +97,7 @@ rolls = [
     {
         "num": "05",
         "title": "Ksara Decor",
-        "badge": None,
+        "badge": "Brand line: Through the Glass Artly",
         "tag": "E-COMMERCE &middot; STOREFRONT &middot; SUSTAINABILITY",
         "desc": "Hand-painted, rescued-glass corporate gifts &mdash; reimagined as a shoppable storefront.",
         "frames": [
@@ -189,6 +189,9 @@ HEAD_CSS = '''
     --accent-soft: #33101F;
     --rule: #2A2731;
     --frame-border: #2C2933;
+    --frame-shadow: 0 14px 28px -10px rgba(0, 0, 0, 0.7), 0 4px 10px -2px rgba(0, 0, 0, 0.5);
+    --frame-shadow-hover: 0 20px 36px -10px rgba(0, 0, 0, 0.75), 0 6px 14px -2px rgba(0, 0, 0, 0.55);
+    --frame-edge: rgba(255, 255, 255, 0.07);
   }
 
   @media (prefers-color-scheme: light) {
@@ -204,6 +207,9 @@ HEAD_CSS = '''
       --accent-soft: #FBDCEB;
       --rule: #E4DEE3;
       --frame-border: #E4DEE3;
+      --frame-shadow: 0 14px 28px -12px rgba(40, 20, 35, 0.22), 0 4px 10px -3px rgba(40, 20, 35, 0.12);
+      --frame-shadow-hover: 0 20px 36px -12px rgba(40, 20, 35, 0.28), 0 6px 14px -3px rgba(40, 20, 35, 0.16);
+      --frame-edge: rgba(255, 255, 255, 0.6);
     }
   }
 
@@ -219,6 +225,9 @@ HEAD_CSS = '''
     --accent-soft: #FBDCEB;
     --rule: #E4DEE3;
     --frame-border: #E4DEE3;
+    --frame-shadow: 0 14px 28px -12px rgba(40, 20, 35, 0.22), 0 4px 10px -3px rgba(40, 20, 35, 0.12);
+    --frame-shadow-hover: 0 20px 36px -12px rgba(40, 20, 35, 0.28), 0 6px 14px -3px rgba(40, 20, 35, 0.16);
+    --frame-edge: rgba(255, 255, 255, 0.6);
   }
 
   * { box-sizing: border-box; }
@@ -416,7 +425,7 @@ HEAD_CSS = '''
   /* Masonry via CSS columns -- no forced aspect ratio, nothing gets cropped */
   .frames {
     columns: 4 220px;
-    column-gap: 12px;
+    column-gap: 20px;
   }
 
   /* Fixed 2x2 grid for rolls where frames read better large (e.g. wide dashboard charts) */
@@ -424,7 +433,7 @@ HEAD_CSS = '''
     columns: unset;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 22px;
   }
 
   .frames.grid-2 .frame {
@@ -438,18 +447,19 @@ HEAD_CSS = '''
 
   .frame {
     position: relative;
-    margin: 0 0 12px;
+    margin: 0 0 22px;
     break-inside: avoid;
     background: var(--surface);
-    border: 1px solid var(--frame-border);
-    border-radius: 3px;
+    border: 1px solid var(--frame-edge);
+    border-radius: 4px;
     overflow: hidden;
-    transition: transform 0.18s ease, border-color 0.18s ease;
+    box-shadow: var(--frame-shadow);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
   }
 
   .frame:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: var(--frame-shadow-hover);
   }
 
   .frame img {
@@ -585,7 +595,7 @@ BODY_HTML = f'''<div class="wrap">
   </section>
 </div>
 
-<footer>WHATMATTERSMOST STUDIO &mdash; UMA RAMANATHAN &mdash; CONTACT SHEET V10</footer>'''
+<footer>WHATMATTERSMOST STUDIO &mdash; UMA RAMANATHAN &mdash; CONTACT SHEET V11</footer>'''
 
 # 1. Artifact fragment (no doctype/html/head/body -- the Artifact tool wraps this)
 fragment = f'''<title>Product Contact Sheet</title>
