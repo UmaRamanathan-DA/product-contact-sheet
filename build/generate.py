@@ -76,10 +76,6 @@ rolls = [
             ("bp-4", "Boards and Paddles community screen"),
             ("bp-5", "Boards and Paddles screen, variant 4"),
             ("bp-6", "Boards and Paddles screen, variant 5"),
-            ("bp-7", "Boards and Paddles device mockup"),
-            ("bp-8", "Boards and Paddles device mockup, variant 2"),
-            ("bp-9", "Boards and Paddles device mockup, variant 3"),
-            ("bp-10", "Boards and Paddles device mockup, variant 4"),
         ],
     },
     {
@@ -437,9 +433,46 @@ HEAD_CSS = '''
     font-family: var(--font-display);
   }
 
+  .contact {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 36px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .contact-line {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(17px, 2vw, 20px);
+    margin: 0;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 20px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .contact-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .contact-links a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
   footer {
     max-width: 1120px;
-    margin: 40px auto 0;
+    margin: 0 auto;
     padding: 0 32px;
     font-family: var(--font-mono);
     font-size: 11px;
@@ -494,9 +527,18 @@ BODY_HTML = f'''<div class="wrap">
       </div>
     </section>
   </div>
+
+  <section class="contact">
+    <p class="contact-line">Let's talk product.</p>
+    <div class="contact-links">
+      <a href="mailto:umaramanathan54@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/ramanathan-uma" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/UmaRamanathan-DA" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
 </div>
 
-<footer>UMA R. &mdash; PRODUCT &amp; ANALYTICS &mdash; CONTACT SHEET V4</footer>'''
+<footer>UMA R. &mdash; PRODUCT &amp; ANALYTICS &mdash; CONTACT SHEET V5</footer>'''
 
 # 1. Artifact fragment (no doctype/html/head/body -- the Artifact tool wraps this)
 fragment = f'''<title>Product Contact Sheet</title>
