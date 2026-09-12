@@ -84,6 +84,7 @@ rolls = [
         "num": "04",
         "title": "PetMe",
         "badge": None,
+        "note": "Select interface icons in this concept are the work of practicing designers, referenced here to sharpen product and visual-design judgment &mdash; not presented as original asset work.",
         "tag": "MOBILE APP &middot; CONSUMER &middot; iOS / ANDROID",
         "desc": "One app for every pet need &mdash; bookings, records, and reminders that today live across five different apps and a paper folder.",
         "frames": [
