@@ -67,6 +67,7 @@ rolls = [
         "num": "03",
         "title": "Boards &amp; Paddles",
         "badge": None,
+        "feature": "bp-11",
         "tag": "MOBILE APP &middot; MARKETPLACE &middot; OUTDOOR",
         "desc": "One app to book ocean-sports gear and packages, and see who else from the community is going.",
         "frames": [
@@ -133,9 +134,10 @@ rolls = [
     },
 ]
 
-def render_frame(roll_frame_count, idx, name, alt):
+def render_frame(roll_frame_count, idx, name, alt, feature=False):
     num = f"{idx+1:02d}/{roll_frame_count:02d}"
-    return f'''<figure class="frame">
+    cls = "frame frame-feature" if feature else "frame"
+    return f'''<figure class="{cls}">
               <span class="frame-num">{num}</span>
               {img(name, alt)}
             </figure>'''
@@ -149,7 +151,8 @@ def render_video_frame(video_name):
 roll_sections = []
 for r in rolls:
     frame_items = [
-        render_frame(len(r["frames"]), i, name, alt) for i, (name, alt) in enumerate(r["frames"])
+        render_frame(len(r["frames"]), i, name, alt, feature=(name == r.get("feature")))
+        for i, (name, alt) in enumerate(r["frames"])
     ]
     if r.get("video"):
         frame_items = [render_video_frame(r["video"])] + frame_items
@@ -457,6 +460,15 @@ HEAD_CSS = '''
   .frame:hover {
     transform: translateY(-4px);
     box-shadow: var(--frame-shadow-hover);
+  }
+
+  .frame-feature {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  @media (max-width: 480px) {
+    .frame-feature { grid-column: span 1; grid-row: span 1; }
   }
 
   .frame img {
