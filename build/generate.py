@@ -247,6 +247,31 @@ HEAD_CSS = '''
     margin-bottom: 8px;
   }
 
+  .byline {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .byline-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  .byline-title {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-left: 12px;
+    border-left: 1px solid var(--rule);
+  }
+
   .eyebrow {
     font-family: var(--font-mono);
     font-size: 11.5px;
@@ -502,6 +527,10 @@ FONT_LINKS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 
 BODY_HTML = f'''<div class="wrap">
   <header class="masthead">
+    <div class="byline">
+      <span class="byline-name">Uma Ramanathan</span>
+      <span class="byline-title">Product Ideation &middot; Design &middot; Analytics &middot; AI</span>
+    </div>
     <div class="eyebrow">Quick-glance gallery</div>
     <h1 class="title">Product, in <em>frames</em>.</h1>
     <p class="intro">
@@ -526,7 +555,7 @@ BODY_HTML = f'''<div class="wrap">
   </section>
 </div>
 
-<footer>UMA R. &mdash; PRODUCT &amp; ANALYTICS &mdash; CONTACT SHEET V6</footer>'''
+<footer>UMA R. &mdash; PRODUCT &amp; ANALYTICS &mdash; CONTACT SHEET V7</footer>'''
 
 # 1. Artifact fragment (no doctype/html/head/body -- the Artifact tool wraps this)
 fragment = f'''<title>Product Contact Sheet</title>
