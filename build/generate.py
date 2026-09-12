@@ -48,7 +48,7 @@ rolls = [
         "video": "boba-video",
         "note": "Select interface icons in this concept are the work of practicing designers, referenced here to sharpen product and visual-design judgment &mdash; not presented as original asset work.",
         "tag": "MOBILE APP &middot; F&amp;B",
-        "desc": "A retro-styled coffee app that turns ordering back into a ritual, instead of collapsing it into two taps.",
+        "desc": "A retro-styled coffee app that gives in-store shopping experience, turning ordering back into a ritual, instead of collapsing it into two taps.",
         "frames": [
             ("boba-1", "bobabean splash screen"),
             ("boba-2", "bobabean drink customization screen"),
