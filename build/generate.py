@@ -586,8 +586,7 @@ BODY_HTML = f'''<div class="wrap">
     <p class="contact-line">Let's talk product.</p>
     <div class="contact-links">
       <a href="mailto:umaramanathan54@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/uma-ramanathan-gb" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/UmaRamanathan-DA" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/uma-ramanathan-canvasandcoefficients" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </section>
 </div>
