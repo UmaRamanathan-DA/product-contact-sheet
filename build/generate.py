@@ -120,6 +120,7 @@ rolls = [
         "num": "07",
         "title": "Taxi Business Insights",
         "badge": None,
+        "layout": "grid-2",
         "tag": "DATA VIZ &middot; OPERATIONS &middot; TABLEAU &amp; PYTHON",
         "desc": "Where a Glasgow taxi fleet's demand actually happens, and whether pricing holds up &mdash; turned from raw trip data into visible patterns.",
         "frames": [
@@ -154,6 +155,7 @@ for r in rolls:
     frames_html = "\n            ".join(frame_items)
     badge_html = f'<span class="badge">{r["badge"]}</span>' if r["badge"] else ""
     note_html = f'<p class="asset-note">{r["note"]}</p>' if r.get("note") else ""
+    frames_class = "frames grid-2" if r.get("layout") == "grid-2" else "frames"
     roll_sections.append(f'''
       <section class="roll" aria-labelledby="roll-{r['num']}-title">
         <div class="roll-head">
@@ -166,7 +168,7 @@ for r in rolls:
           </div>
           <span class="roll-tag">{r['tag']}</span>
         </div>
-        <div class="frames">
+        <div class="{frames_class}">
             {frames_html}
         </div>
       </section>''')
@@ -407,6 +409,23 @@ HEAD_CSS = '''
     column-gap: 12px;
   }
 
+  /* Fixed 2x2 grid for rolls where frames read better large (e.g. wide dashboard charts) */
+  .frames.grid-2 {
+    columns: unset;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .frames.grid-2 .frame {
+    break-inside: unset;
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    .frames.grid-2 { grid-template-columns: 1fr; }
+  }
+
   .frame {
     position: relative;
     margin: 0 0 12px;
@@ -555,7 +574,7 @@ BODY_HTML = f'''<div class="wrap">
   </section>
 </div>
 
-<footer>UMA R. &mdash; PRODUCT &amp; ANALYTICS &mdash; CONTACT SHEET V7</footer>'''
+<footer>UMA R. &mdash; PRODUCT &amp; ANALYTICS &mdash; CONTACT SHEET V8</footer>'''
 
 # 1. Artifact fragment (no doctype/html/head/body -- the Artifact tool wraps this)
 fragment = f'''<title>Product Contact Sheet</title>
