@@ -143,7 +143,7 @@ def render_frame(roll_frame_count, idx, name, alt, feature=False):
             </figure>'''
 
 def render_video_frame(video_name):
-    return f'''<figure class="frame frame-video">
+    return f'''<figure class="frame frame-video frame-feature">
               <span class="frame-num">WALKTHROUGH</span>
               {video(video_name)}
             </figure>'''
