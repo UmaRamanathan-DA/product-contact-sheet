@@ -47,7 +47,7 @@ rolls = [
         "badge": None,
         "video": "boba-video",
         "note": "Select interface icons in this concept are the work of practicing designers, referenced here to sharpen product and visual-design judgment &mdash; not presented as original asset work.",
-        "tag": "MOBILE APP &middot; F&amp;B &middot; LOYALTY",
+        "tag": "MOBILE APP &middot; F&amp;B",
         "desc": "A retro-styled coffee app that turns ordering back into a ritual, instead of collapsing it into two taps.",
         "frames": [
             ("boba-1", "bobabean splash screen"),
@@ -586,13 +586,13 @@ BODY_HTML = f'''<div class="wrap">
     <p class="contact-line">Let's talk product.</p>
     <div class="contact-links">
       <a href="mailto:umaramanathan54@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/ramanathan-uma" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/uma-ramanathan-gb" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/UmaRamanathan-DA" target="_blank" rel="noopener">GitHub</a>
     </div>
   </section>
 </div>
 
-<footer>CANVAS &amp; COEFFICIENTS STUDIO &mdash; UMA RAMANATHAN &mdash; CONTACT SHEET V12</footer>'''
+<footer>CANVAS &amp; COEFFICIENTS STUDIO &mdash; UMA RAMANATHAN &mdash; CONTACT SHEET</footer>'''
 
 # 1. Artifact fragment (no doctype/html/head/body -- the Artifact tool wraps this)
 fragment = f'''<title>Product Contact Sheet</title>
