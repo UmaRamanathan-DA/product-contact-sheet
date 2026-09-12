@@ -249,45 +249,39 @@ HEAD_CSS = '''
     margin-bottom: 8px;
   }
 
-  .studio-mark {
+  .byline {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .byline-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  .byline-studio {
     font-family: var(--font-mono);
     font-size: 11px;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
+    padding-left: 12px;
+    border-left: 1px solid var(--rule);
   }
 
-  .studio-mark::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--accent);
-    display: inline-block;
-    box-shadow: 0 0 0 4px var(--accent-soft);
-  }
-
-  h1.name {
-    font-family: var(--font-display);
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-size: clamp(42px, 7vw, 72px);
-    line-height: 1.02;
-    margin: 0 0 14px;
-    text-wrap: balance;
-  }
-
-  .role-line {
+  .byline-title {
     font-family: var(--font-mono);
-    font-size: 13px;
-    letter-spacing: 0.1em;
+    font-size: 11px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--ink-soft);
-    margin: 0 0 30px;
+    color: var(--ink-faint);
+    padding-left: 12px;
+    border-left: 1px solid var(--rule);
   }
 
   .eyebrow {
@@ -312,19 +306,28 @@ HEAD_CSS = '''
     box-shadow: 0 0 0 4px var(--accent-soft);
   }
 
+  h1.title {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.06;
+    margin: 0 0 18px;
+    text-wrap: balance;
+    max-width: 16ch;
+  }
+
+  h1.title em {
+    color: var(--accent);
+    font-style: italic;
+  }
+
   p.intro {
     font-size: 16.5px;
     line-height: 1.65;
     color: var(--ink-soft);
     max-width: 62ch;
     margin: 0;
-  }
-
-  p.intro .lede {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 1.2em;
-    color: var(--ink);
   }
 
   p.intro strong {
@@ -553,13 +556,15 @@ FONT_LINKS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 
 BODY_HTML = f'''<div class="wrap">
   <header class="masthead">
-    <div class="studio-mark">WhatMattersMost Studio</div>
-    <h1 class="name">Uma Ramanathan</h1>
-    <p class="role-line">Product Ideation &middot; Design &middot; Analytics &middot; AI</p>
+    <div class="byline">
+      <span class="byline-name">Uma Ramanathan</span>
+      <span class="byline-studio">WhatMattersMost Studio</span>
+      <span class="byline-title">Product Ideation &middot; Design &middot; Analytics &middot; AI</span>
+    </div>
     <div class="eyebrow">Quick-glance gallery</div>
+    <h1 class="title">Product, in <em>frames</em>.</h1>
     <p class="intro">
-      <span class="lede">Product, in frames</span> &mdash; a contact sheet, not a case-study deck &mdash;
-      <strong>shipped and prototyped app design work</strong>,
+      A contact sheet, not a case-study deck &mdash; <strong>shipped and prototyped app design work</strong>,
       rolled out frame by frame the way I'd walk a founder through it over coffee.
       I also build <span class="highlight">real analytical dashboards and AI automations</span> end-to-end &mdash;
       the data-viz rolls below are early proof, with AI automation case studies loading in next.
@@ -580,7 +585,7 @@ BODY_HTML = f'''<div class="wrap">
   </section>
 </div>
 
-<footer>WHATMATTERSMOST STUDIO &mdash; UMA RAMANATHAN &mdash; CONTACT SHEET V9</footer>'''
+<footer>WHATMATTERSMOST STUDIO &mdash; UMA RAMANATHAN &mdash; CONTACT SHEET V10</footer>'''
 
 # 1. Artifact fragment (no doctype/html/head/body -- the Artifact tool wraps this)
 fragment = f'''<title>Product Contact Sheet</title>
