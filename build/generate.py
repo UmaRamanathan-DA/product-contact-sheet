@@ -70,6 +70,7 @@ rolls = [
         "tag": "MOBILE APP &middot; MARKETPLACE &middot; OUTDOOR",
         "desc": "One app to book ocean-sports gear and packages, and see who else from the community is going.",
         "frames": [
+            ("bp-11", "Boards and Paddles home screen with Packages, Watersports, Rentals, Souvenir, and Community sections"),
             ("bp-1", "Boards and Paddles main mobile screen"),
             ("bp-2", "Boards and Paddles booking screen"),
             ("bp-3", "Boards and Paddles gear listing screen"),
