@@ -464,11 +464,10 @@ HEAD_CSS = '''
 
   .frame-feature {
     grid-column: span 2;
-    grid-row: span 2;
   }
 
   @media (max-width: 480px) {
-    .frame-feature { grid-column: span 1; grid-row: span 1; }
+    .frame-feature { grid-column: span 1; }
   }
 
   .frame img {
